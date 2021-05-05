@@ -1,4 +1,22 @@
 import pygame
+import configparser
+import sys
+
+ini_file = sys.argv[1]
+
+config = configparser.ConfigParser()
+config.read(ini_file)
+
+backgroundcolor = config["generic"]["background-color"]
+fontcolor = config["generic"]["font-color"]
+fontfamily = config["generic"]["font-family"]
+fontsize = int(config["generic"]["font-size"])
+title = config["generic"]["title"]
+footerimage = config["generic"]["footer-image"]
+topimage = config["generic"]["top-image"]
+
+ploegnaam_Thuis = config["teamA"]["naam"]
+ploegnaam_Uit = config["teamB"]["naam"]
 
 WIDTH = 800
 HEIGHT = 600
@@ -11,8 +29,7 @@ vijfsetter = False
 
 pygame.init()
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-
-font = pygame.font.SysFont("Arial", 24)
+font = pygame.font.SysFont(fontfamily, fontsize)
 
 # Start de klok
 clock = pygame.time.Clock()
@@ -100,9 +117,9 @@ while running:
             vijfsetter = False
             running = False
 
-    screen.fill("black")
+    screen.fill(backgroundcolor)
 
-    text = font.render(f"Thuis   {thuis} ({thuisset}) - ({uitset}) {uit}    uit", True, "white")
+    text = font.render(f"{ploegnaam_Thuis}   {thuis} ({thuisset}) - ({uitset}) {uit}    {ploegnaam_Uit}", True, fontcolor)
     screen.blit(text, (WIDTH / 2 - (text.get_width() / 2), HEIGHT / 2 - (text.get_height() / 2)))
 
     pygame.display.flip()
