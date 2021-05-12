@@ -16,9 +16,9 @@ footerimage = config["generic"]["footer-image"]
 topimage = config["generic"]["top-image"]
 
 ploegnaam_Thuis = config["teamA"]["naam"]
-ploegfoto_Thuis = config["Team1"]["logo"]
+ploegfoto_Thuis = config["teamA"]["logo"]
 ploegnaam_Uit = config["teamB"]["naam"]
-ploegfoto_Uit = config["Team2"]["logo"]
+ploegfoto_Uit = config["teamB"]["logo"]
 
 WIDTH = 800
 HEIGHT = 600
@@ -123,8 +123,10 @@ while running:
 
     text = font.render(f"{ploegnaam_Thuis}   {thuis} ({thuisset}) - ({uitset}) {uit}    {ploegnaam_Uit}", True, fontcolor)
     screen.blit(text, (WIDTH / 2 - (text.get_width() / 2), HEIGHT / 2 - (text.get_height() / 2)))
+    screen.blit(topimage, )
     screen.blit(ploegfoto_Thuis, )
     screen.blit(ploegfoto_Uit, )
+    screen.blit(footerimage, )
 
     pygame.display.flip()
 
