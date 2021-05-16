@@ -90,7 +90,7 @@ while running:
             print("Thuisploeg heeft gewonne")
             running = False
 
-    if vijfsetter == False:    
+    if vijfsetter == False:
         if thuisset == 3 and uitset == 1:
             print("Thuisploeg heeft gewonne")
             running = False
@@ -121,12 +121,26 @@ while running:
 
     screen.fill(backgroundcolor)
 
-    text = font.render(f"{ploegnaam_Thuis}   {thuis} ({thuisset}) - ({uitset}) {uit}    {ploegnaam_Uit}", True, fontcolor)
-    screen.blit(text, (WIDTH / 2 - (text.get_width() / 2), HEIGHT / 2 - (text.get_height() / 2)))
-    screen.blit(topimage, )
-    screen.blit(ploegfoto_Thuis, )
-    screen.blit(ploegfoto_Uit, )
-    screen.blit(footerimage, )
+    text = font.render(
+        f"{ploegnaam_Thuis}   {thuis} ({thuisset}) - ({uitset}) {uit}    {ploegnaam_Uit}",
+        True,
+        fontcolor,
+    )
+    screen.blit(
+        text, (WIDTH / 2 - (text.get_width() / 2), HEIGHT / 2 - (text.get_height() / 2))
+    )
+    screen.blit(
+        topimage,
+    )
+    screen.blit(
+        ploegfoto_Thuis,
+    )
+    screen.blit(
+        ploegfoto_Uit,
+    )
+    screen.blit(
+        footerimage,
+    )
 
     pygame.display.flip()
 
