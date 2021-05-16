@@ -129,18 +129,18 @@ while running:
     screen.blit(
         text, (WIDTH / 2 - (text.get_width() / 2), HEIGHT / 2 - (text.get_height() / 2))
     )
-    screen.blit(
-        topimage,
-    )
-    screen.blit(
-        ploegfoto_Thuis,
-    )
-    screen.blit(
-        ploegfoto_Uit,
-    )
-    screen.blit(
-        footerimage,
-    )
+    # screen.blit(
+    #     topimage,
+    # )
+    # screen.blit(
+    #     ploegfoto_Thuis,
+    # )
+    # screen.blit(
+    #     ploegfoto_Uit,
+    # )
+    # screen.blit(
+    #     footerimage,
+    # )
 
     pygame.display.flip()
 
